@@ -7,7 +7,7 @@
  Instance                      | Alert Manager (alert_manager) | Add-on for Alert Manager (TA-alert_manager)
  ----------------------------- | ----------------------------- | -------------------------------------------
  Search Head(s)                | X                             | X
- Indexer(s    )                | X                             | X
+ Indexer(s    )                |                               | X
 
 ###  Why do I have to deploy the Add-on on a Search Head?
 As the Alert Manager generates some events (by default alerts), they get parsed on the Search Head. So event breaking rules from props.conf need to get applied here, regardless if events get forwarded to indexers later or not.
