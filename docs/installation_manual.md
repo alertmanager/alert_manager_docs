@@ -1,5 +1,5 @@
 # Before you deploy
-1. Download the App (<https://splunkbase.splunk.com/app/2665/>) and the Add-on (<https://splunkbase.splunk.com/app/3365/>) from Splunkbase 
+1. Download the App (<https://splunkbase.splunk.com/app/2665/>) and the Add-on (<https://splunkbase.splunk.com/app/3365/>) from Splunkbase
 2. Check if your Splunk installation meets the prerequisites
 3. Decide if you want to use Alert Manager's default index `alerts` or not. Configure this index on the Indexers and Search Heads (as we use the REST API, Splunk needs to know the existence of the index on the Search Head too).
 
@@ -15,7 +15,7 @@ As the Alert Manager generates some events (by default alerts), they get parsed 
 # Deploy the Alert Manager App
 ## Create an index for Alert Manager
 The app requires a dedicated index where events created from the Alert Manager will be stored.
-By default, the index `alerts` is used. 
+By default, the index `alerts` is used.
 
 To create this index, either use Splunk Web (Settings -> Indexes -> New Index) or add a new stanza in indexes.conf:
 
@@ -51,7 +51,7 @@ The Add-on provides configuration for:
 * Event breaking and timestamp recognition configuration for Alert Manager events
 * Field extractions
 
-The Add-on is available at [Splunkbase](https://splunkbase.splunk.com/app/3365/) or is shipped together with the main app archive and is available at `$SPLUNK_HOME/alert_manager/appserver/src/TA-alert_manager.tar.gz`
+The Add-on is available at [Splunkbase](https://splunkbase.splunk.com/app/3365/).
 
 1. Unpack and upload the add-on according to the Deployment Matrix
 2. Restart Splunk
@@ -71,4 +71,3 @@ We recommend to use the App settings page, as there will be a configuration vali
 * Change the index according to your decision whether to use the default one (named alerts) or your custom index. Either change it in the Alert Manager's setup page or in `alert_manager.conf`
 * Have a look at `$SPLUNK_HOME/etc/apps/alert_manager/README/alert_manager.conf.spec` for full configuration reference
 * Set `is_configured` to the value "1" (without quotes) in `$SPLUNK_HOME/etc/apps/alert_manager/local/app.conf` inside the `[install]` stanza to hide the App's setup page in case you configured the App with the config file
-
