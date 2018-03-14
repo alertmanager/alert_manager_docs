@@ -24,7 +24,7 @@ Alert Manager allows  Alert Status customization. To change which statuses are a
 * Open the Alert Status Settings under Alert Manager -> Settings -> Alert Status
 * A table shows all available statuses
 
-![Screenshot](img/im_ewa_button.png) 
+![Screenshot](img/im_alert_status_settings.png) 
 
 * The `builtin` column show all statuses that are deliverd by default with Alert Manager
 * The `internal_only` column shows statuses that are internal to Alert Manager
