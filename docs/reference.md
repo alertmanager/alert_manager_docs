@@ -1,26 +1,28 @@
-# Introductions
+# Reference
 
-## Technologies used by Alert Manager  
+## Introductions
+
+### Technologies used by Alert Manager
+
 As described above, the App writes different data and uses the Splunk framework components to provide comfortable end-user functionality.
 
 * [App Key Value Store](http://dev.splunk.com/view/webframework-features/SP-CAAAEY7)
-    * Save and track states of incidents
-    * Store incident defaults and user settings
-    * Store alert results per incident
+  * Save and track states of incidents
+  * Store incident defaults and user settings
+  * Store alert results per incident
 * [Splunk REST API](http://dev.splunk.com/view/rest-api-overview/SP-CAAADP8)
-    * Write events to the index
-    * Add/retrieve data from the App Key Value Store
-    * Manage App configuration
+  * Write events to the index
+  * Add/retrieve data from the App Key Value Store
+  * Manage App configuration
 * [Splunk JS Stack](http://dev.splunk.com/view/webframework-splunkjsstack/SP-CAAAESV)
-    * Extend Splunk dashboards with workflow functionality
-    * Extend and enhance Splunk visualization components (Single value, Tables, ...)
-    * Provide 3rd party visualizations
+  * Extend Splunk dashboards with workflow functionality
+  * Extend and enhance Splunk visualization components (Single value, Tables, ...)
+  * Provide 3rd party visualizations
 
+## Custom Search Commands
 
-# Incident Posture
-# Custom Search Commands
+### loadincidentresults
 
-### loadincidentresults 
 **Usage**: ```<your search> | table _time incident_id | loadincidentresults incident_id```
 
 **Parameters:**
@@ -29,9 +31,10 @@ As described above, the App writes different data and uses the Splunk framework 
 
 Returns results of incidents from the KV store given a list of incidents having an `incident_id` field present.
 
-### modifyincidents 
+### modifyincidents
 
 **Usage**:
+
 ```<your search> | table _time incident_id | modifyincidents status=<new status> owner=<new owner> urgency=<new urgency> comment=<comment>```
 
 **Parameters:**
@@ -41,13 +44,17 @@ Returns results of incidents from the KV store given a list of incidents having 
 * `urgency`: New urgency of the incident(s) (Optional)
 * `comment`: Text of the comment to add to the change event (Optional)
 
-Updates incident attributes such as status, owner, urgency and adds a comment, if provided. Requires the field `incident_id` in the search results. Use any attribute in combination or by oneself. 
+Updates incident attributes such as status, owner, urgency and adds a comment, if provided. Requires the field `incident_id` in the search results. Use any attribute in combination or by oneself.
 
-# Reports
+
+## Reports
+
 tbd
 
-# Datamodel
+## Datamodel
+
 tbd
 
-# Troubleshooting
+## Troubleshooting
+
 tbd

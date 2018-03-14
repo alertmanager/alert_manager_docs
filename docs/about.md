@@ -1,10 +1,13 @@
-# Authors
+# About
+
+## Authors
 
 Simon Balz (<simon@balz.me>) and Mika Borner (<mika.borner@gmail.com>).
 
-# Credits
+## Credits
 
-## Third Party Software used by Alert Manager
+### Third Party Software used by Alert Manager
+
 * [Handsontable](https://handsontable.com/)
 * [Jinja2](http://jinja.pocoo.org/docs/dev/)
 * [markupsafe](https://pypi.python.org/pypi/MarkupSafe)
@@ -15,7 +18,7 @@ Simon Balz (<simon@balz.me>) and Mika Borner (<mika.borner@gmail.com>).
 * [RequireJS text](https://github.com/requirejs/text)
 * [Select2](https://github.com/select2/select2)
 
-## Friends
+### Friends
 
 * [ziegfried](https://github.com/ziegfried/) for support and inspiration
 * [atremar](https://github.com/atremar) for documentation reviews
