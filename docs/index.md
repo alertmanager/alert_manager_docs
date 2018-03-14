@@ -21,8 +21,14 @@ The Alert Manager adds simple incident workflows to Splunk. The general purpose 
 * Incidents can be configured to get auto-resolved when a new incident is created from the same alert
 * Incidents can be configured to get auto-resolved when the alert's ttl is reached
 * Incidents can be configured to get auto-resolved when the new matching suppression rules are added
+* Incidents can be configured to get auto-resolved when they are informal
 * Configure full-whitelabeled email notifications upon several events
 * Report on incidents, their attributes and workflow updates
+* External Workflow Actions for manually triggering external actions
+* Support for storing external reference ids per incident
+* Alert Status customization
+* Quick assignment
+* Optionally index alert results instead of storing in KV Store
 
 ### Prerequisites
 

@@ -1,4 +1,29 @@
 # Release Notes
+
+## New Features
+
+*  External Workflow Actions
+*  Support for external event ids
+*  Alert Status Customization
+*  Quick Assign
+*  Ability to index alert results instead of writing to KV Store
+*  Auto resolve informational events
+
+## Enhancements
+
+*  Search Head Cluster support
+*  Removed custom alert index / indexes.conf. Default to main index with ability to customize
+*  Changed permission style from capabilities to roles to comply with certification requirements
+*  Internal: New Splunkd-style REST endpoints because of deprecated Splunk Web endpoints
+*  Improved Alert History
+*  Reduced Alert Metadata footprint
+*  Added alert_manager_user role with read-only permissions to knowledge objects
+*  display_fields in Incident Settings is now optional
+*  Added a check to the incident edit modal to wait for the owner and status dropdown to be ready before save button gets active
+
+
+## Changes by Release
+
 - **v2.1.4**/   2016-11-07
     - Fixed disabled migration scripts for fresh installations
 - **v2.1.3**/   2016-10-21

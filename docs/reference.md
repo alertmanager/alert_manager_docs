@@ -47,6 +47,12 @@ Returns results of incidents from the KV store given a list of incidents having 
 Updates incident attributes such as status, owner, urgency and adds a comment, if provided. Requires the field `incident_id` in the search results. Use any attribute in combination or by oneself.
 
 
+## External Reference ID
+
+The incident collection has an additional column `external_reference_id` which can be used to store references to other systems. Typically this field is updated by an external process. The value of the field will be displayed in the details section of an incident if it is set.
+
+![Screenshot](img/im_incident_posture_external_reference_id.png)
+
 ## Reports
 
 tbd
