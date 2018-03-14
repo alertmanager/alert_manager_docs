@@ -45,7 +45,7 @@ Suppressed incidents can be reviewed in the Incident Posture dashboard
 
 If you enabled *Auto-resolve incidents on adding new matching suppression rules* in the Custom Alert Action parameters on your alert, the Alert Manager scheduler will auto-resolve matching Incidents after the rule has been added. Incidents will be turned into the status *auto_suppressed_resolved*. If this option is disabled only new matching Incidents get suppressed.
 
-### Use External Workflow Actions
+## Use External Workflow Actions
 
 * On the incident posture dashboard, click on the External Workflow Action button ![Screenshot](img/im_ewa_button.png)
 * The Execute External Workflow Action -windows will open
@@ -56,7 +56,7 @@ If you enabled *Auto-resolve incidents on adding new matching suppression rules*
 * Execute the action
 * Alert Manager will update the history with the action
 
-### Quick assign
+## Quick assign
 
 * To assign an incident to the current user, press the quick assign button
 
