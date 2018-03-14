@@ -288,11 +288,11 @@ As described above, *Notification Schemes* finally containt a combination from *
 * Type in the name (column `template_name`) to be used for this notification
 * Click *Save* at lower right corner to save the Notification Scheme
 
-### External Workflow Actions
+## External Workflow Actions
 
 External Workflow Actions (EWA) can be used to manually trigger external actions. The External Alert Actions are based on Splunk's alert action functionality. While alert actions are usually triggered automatically, Alert Manager triggers the action manually.
 
-#### Configure External Workflow Actions
+### Configure External Workflow Actions
 
 * (Optional) Install and configure an alert action under Splunk Settings -> Alert Action -> Setup
 * Open Alert Manager -> Settings -> External Workflow Actions
