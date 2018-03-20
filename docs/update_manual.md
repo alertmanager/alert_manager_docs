@@ -26,3 +26,5 @@ Alternatively, you can also set the index name in local/alert_manager
 [settings]
 index = alerts
 ```
+
+See the _Installation Manual_ for more details.

@@ -24,14 +24,14 @@ Alert Manager allows  Alert Status customization. To change which statuses are a
 * Open the Alert Status Settings under Alert Manager -> Settings -> Alert Status
 * A table shows all available statuses
 
-![Screenshot](img/im_alert_status_settings.png) 
+![Screenshot](img/im_alert_status_settings.png)
 
 * The `builtin` column show all statuses that are deliverd by default with Alert Manager
 * The `internal_only` column shows statuses that are internal to Alert Manager
 * The `status` column stores the name of the status and the `status_description` column contains a user-friendly name for the status
 * Statuses can be added, changed and removed
 
-**Important:** Be careful when deleting builtin/internal_only statuses
+**Important:** You should not delete builtin/internal_only statuses
 
 ## Configure E-Mail Notifications
 

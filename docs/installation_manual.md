@@ -22,7 +22,7 @@ As the Alert Manager generates some events (by default alerts), they get parsed 
 ### Create an index for Alert Manager
 
 The app requires a dedicated index where events created from the Alert Manager will be stored.
-By default, the index `alerts` is used.
+By default, the index `main` is used. It is recommended to use an alternative index (e.g. _alerts_)
 
 To create this index, either use Splunk Web (Settings -> Indexes -> New Index) or add a new stanza in indexes.conf:
 
@@ -36,7 +36,7 @@ disabled = false
 
 **Important:** Be sure to create the index on all Indexers and Search Heads (the Rest API requires the index to know on Search Heads too).
 
-If you decide to not use the default index `alerts`, don't forget to adjust the configuration during App configuration.
+If you decide to not use the index `alerts`, don't forget to adjust the configuration during App configuration.
 
 Also make sure, that the User Role has access to your index and searches trough your custom index by default.
 
