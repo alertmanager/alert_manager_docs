@@ -297,7 +297,9 @@ External Workflow Actions (EWA) can be used to manually trigger external actions
 * (Optional) Install and configure an alert action under Splunk Settings -> Alert Action -> Setup
 * Open Alert Manager -> Settings -> External Workflow Actions
 * The table shows all available alert actions and parametrisations.
+
 ![Screenshot](img/im_externalworkflowactionsettings.png)
+
 * EWAs can be disabled/enabled for use within Alert Manager
 * Using different labels, different parametrisations of an EWA can be made available.
 * The title column must match the internal name of the Splunk alert action (can be checked in alert_actions.conf).
