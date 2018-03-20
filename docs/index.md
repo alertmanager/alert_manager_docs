@@ -1,4 +1,4 @@
-# Index
+# Introduction
 
 ## About the Alert Manager
 

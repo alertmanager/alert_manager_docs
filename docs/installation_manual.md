@@ -26,7 +26,7 @@ By default, the index `alerts` is used.
 
 To create this index, either use Splunk Web (Settings -> Indexes -> New Index) or add a new stanza in indexes.conf:
 
-```ini-file
+```ini
 [alerts]
 homePath   = $SPLUNK_DB/alerts/db
 coldPath   = $SPLUNK_DB/alerts/colddb

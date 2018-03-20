@@ -2,6 +2,7 @@ site_name: Alert Manager
 pages:
     - Introduction: index.md
     - Installation: installation_manual.md
+    - Upgrade: upgrade_manual.md
     - Configuration: configuration_manual.md
     - User Manual: user_manual.md
     - Reference: reference.md
