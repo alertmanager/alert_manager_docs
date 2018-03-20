@@ -1,4 +1,4 @@
-# Update Manual
+# Update to Release 2.2
 
 ## Before you update
 
