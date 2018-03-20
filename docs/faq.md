@@ -22,6 +22,6 @@ There are two main reasons why we are using _users_ in our app:
 * Example 1: You wan't to notify or dispatch an incident to a Domain controller admin when a new Incident has been created, but the admin has no account in Splunk
 * Example 2: You wan't to send a notification to a mailing list without having to create a dedicated Splunk user for this purpose.
 
-### Why do I have to deploy the Add-on on a Search Head?
+## Why do I have to deploy the Add-on on a Search Head?
 
 As the Alert Manager generates some events (by default alerts), they get parsed on the Search Head. So event breaking rules from props.conf need to get applied here, regardless if events get forwarded to indexers later or not.
