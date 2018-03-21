@@ -91,6 +91,68 @@
 
 
 ## Changelog
+- **2018-03-20** simcen
+	- Added a check to prevent built-in Alert Status deletion
+- **2018-03-17** simcen
+	- Improved External Workflow Actions by adding a pulldown to select the Alert Action
+	- Changed namespace for custom splunkd endpoints
+	- Fixed a bug where Suppression Rules didn't work on Alert Metadata fields
+- **2018-03-14** simcen
+	- Changed external workflow action command retrieval to \_key instead title
+- **2018-03-12** simcen
+	- Renamed ExternalWorkflowActionSettings to ExternalWorkflowActions and moved related helper endpoints to EWA REST Handler
+	- Added Alert Status edit view
+- **2018-03-11** simcen
+	- Changed build system to gradle
+- **2018-03-09** simcen
+	- Fixed a bug when Email Notifications were not sent anymore (#206)
+	- Fixed a bug where Alert Manager was not compatible with Search Head Clustering (#200)
+	- Fixed a bug where priority column wasn't colored correctly when value is "informational" (#180)
+	- Fixed drilldown for realtime searches and searches which start with a seeding command (#186)
+- **2018-03-07** simcen
+	- Migrated user_settings REST endpoint (#203)
+	- Migrated email_templates REST endpoint (#203)
+	- Moved incident_workflow REST endpoint to helpers (#203)
+	- Migrated incident_settings REST endpoint  (#203)
+	- Migrated externalworkflowaction_settings REST endpoint  (#203)
+- **2018-03-06** simcen
+	- Finally migrated all helpers to new REST style endpoints
+	- Fixed a bug where externalworkflowaction was not executed
+- **2018-03-06** my2ndhead
+	- Added external reference id feature (#204)
+- **2018-02-26** my2ndhead
+	- Removed custom drilldown feature
+	- Fixed a bug in the datamodel and posture, where comments were not displayed (#182)
+	- Added feature to improve logging with log_event helper function (#199)
+	- Added more columns to history table
+	- Added feature for external workflow action
+	- Improved incident_posture to reload tables always when expanding a row.
+	- Fixed a bug in incident_posture, to hide Loading text correctly
+- **2018-02-26** simcen
+	- Cherry-picked a couple of changes from the release branch
+  	- Added back new role alert_manager_user for read-only access to Splunk objects
+	- Re-enabled old-fashioned Alert Results drilldown temporarly
+- **2018-02-02** simcen
+	- Changed user synchronization to check for a role instead of capabilities
+	- Removed capabilities as they are not allowed for certification
+- **2017-12-18** simcen
+	- Added migration script which supports prepopulating empty alert status collection
+	- Added a check to the incident edit modal to wait for the owner and status dropdown to be ready before save button gets active (#189)
+- **2017-06-25** johnfromthefuture
+	- Added support for Conditional Tables in the Incident Posture View (#177)
+	- Added support for automatically resolve informational events (#181)
+- **2017-05-26** johnfromthefuture
+	- Changed checking if "incident created" notification needs to be fired (#178)
+- **2017-04-22** johnfromthefuture
+	- Changed incident posture with cosmetic enhancements (#177)
+	- Changed Incident setting display_fields to be now optional (#177)
+- **2017-03-28** johnfromthefuture
+	- Added support to index data results from a given alert (#143)
+- **2017-03-03** johnfromthefuture
+	- Reduced alert metadata (#173)
+- **2017-03-02** johnfromthefuture
+	- Added role 'alert_manager_user' to have read-only perms. (#168)
+	- Modified the event that is generated when auto_previous_resolved happens. The event will now record the resolving incident (#172)
 - **2016-11-04** simon@balz.me
     - Introduced new documentation system (mkdocs + readthedocs.io)
 - **2016-10-21** simon@balz.me
