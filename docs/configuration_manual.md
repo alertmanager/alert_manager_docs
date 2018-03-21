@@ -1,15 +1,14 @@
-
-## Configuration Manual
+# Configuration Manual
 
 The the Alert Manager App's main purpose is to extend Splunk's core alerting functionality with sophisticated incident workflows and reporting.
 He can be also used to replace existing workflow solutions (eg. Incident Review in Enterprise Security).
 
-### Alert Manager Core Concepts
+## Alert Manager Core Concepts
 
 The Alert Manager is built on top of Splunk's core alerting functionality, utilizing its main functionality. Instead of just doing a "fire and forget" action on the alert, the Alert Manager will store the state of an alert as an incident in a KV store.
 The app was designed to easily integrate into existing environments by just enabling the Customer Alert Action shipped with the app to your alerts that should be managed and adding the alert_manager role to the users that use the app or send alerts to the app. Pre-existing Alert Scripts still be used by configuring it with another alert action.
 
-#### The Notion of Alerts & Incidents
+### The Notion of Alerts & Incidents
 
 It is important, to distinguish between the terms alerts and incidents.
 
@@ -19,15 +18,15 @@ It is important, to distinguish between the terms alerts and incidents.
 
 Incidents are stored with metadata such as `alert_time`, `job_id`, `owner`, `status`, `priority`, `ttl`, etc.
 
-#### Alert Action
+### Alert Action
 The "alert_manager" Alert Action basically enables a Scheduled Search (Alert) to use the Alert Manager functionalities.
 It provides some options to customize the behaviour. These options apply to the actual incident being created when an alert fires.
 
-#### Incident Settings
+### Incident Settings
 
 Incident Settings are additional parameters which can be changed even after an Incident has been created.
 
-#### Incident Categorization
+### Incident Categorization
 
 Categorization is used to group incidents. Categorization can be used to filter incidents on the Incident Posture dashboard and run category statistics. There are two attributes can be used: category and subcategory.
 
@@ -51,9 +50,9 @@ high   | low     | medium
 high   | medium  | high
 high   | high    | critical
 
-Refer to "Configure Impact, Urgency and Priority" if you need to customize this behaviour.
+Refer to [Configure Impact, Urgency and Priority](configuration_manual.md#configure-impact-urgency-and-priority) if you need to customize this behaviour.
 
-#### Auto Assignment
+### Auto Assignment
 
 Alert Manager allows incidents to be automatically assigned to owners.
 
@@ -63,25 +62,25 @@ Splunk's alerting facility triggers on search results. Sometimes an incident is 
 
 Another scenario could be, that an alert keeps recurring many times before an incident owner can find the root cause and fix the problem. This may cause a lot of incidents in the "new"-state. To close these previously opened incidents, the Auto Previous Resolve -function can be used.
 
-##### Auto-resolve expired incidents
+#### Auto-resolve expired incidents
 
 To use the "Auto-resolve expired incidents" feature, the expiration time of the triggered alert time should be set. E.g. if an alert search runs every 15 Minutes, the expiration time should also be set to 15 Minutes.
 
 E.g. the first alert fires at 1:00am and creates an incident. The next scheduled alert runs at 1:15am without results. The first alert from 1:00am will expire at 1:15am and the incident will be automatically resolved with status auto_ttl_resolve.
 
-##### Auto-resolve previously opened identical incidents
+#### Auto-resolve previously opened identical incidents
 
 The Auto Previous Resolve feature closes previous incident in status "new".
 
 E.g. the first alert fires at 1:00am and creates an incident. The next scheduled alert fires at 1:15am and opens a new incident. If the first incident from 1:00am is still in status "new", it will be automatically resolved with status auto_previous_resolve. In case, the first incident's status was changed, it will not be resolved and it's status will be preserved.
 
-##### Auto-resolve newly incidents opened identical incidents
+#### Auto-resolve newly incidents opened identical incidents
 
-##### Auto-resolve incidents on adding new matching suppression rules
+#### Auto-resolve incidents on adding new matching suppression rules
 
 Alert Manager supports the suppression of incidents e.g. during maintenance windows or for false positives. Incidents, that are suppressed will be automatically closed.
 
-## Configure the Custom Alert Action
+## Custom Alert Action
 
 For alerts to be managed by the Alert Manager, a few per-requisites have to be fulfilled.
 
@@ -99,7 +98,7 @@ Select the **Alert Manager** action. A form will be added into the pop-up window
 
 **Note:** To customize the title of an incident, you can include field values from results using `$result.fieldname$` syntax.
 
-## Configure Incident Settings
+## Incident Settings
 
 A few incident settings have to be configured separately from the alert actions.
 
@@ -129,13 +128,13 @@ An optional space separated list of fields to be displayed under the incident de
 
 The selected notification scheme for this Incident
 
-## Configure Impact, Urgency and Priority
+## Impact, Urgency and Priority
 
 The incident's priority is calculated based on a lookup table named `alert_priority`. A default lookup table seeds under `$APP_HOME/lookup/alert_priority.csv.sample`.
 
 To adjust the priorities, create a new lookup table `$APP_HOME/lookup/alert_priority.csv` and edit `$APP_HOME/local/transforms.conf` to point to this new lookup table.
 
-## Configure Alert Manager Users
+## Alert Manager Users
 
 Users in the Alert Manager are supposed to be virtual. In addition to users in Splunk's ecosystem, e.g. Splunk internal users or users from an external LDAP repository, virtual Alert Managers users allow Incident assignment to external parties without creating them as a real Splunk user.
 
@@ -153,7 +152,7 @@ Add a Virtual Alert Manager user:
 To disable virtual Alert Manager users, just set the  active user directory to 'builtin' and press 'Save'. Users already existing won't get removed so Incidents assigned to them aren't broken but you cannot assign Incidents to them anymore from that point.
 
 
-## Configure Alert Status
+## Alert Status
 
 Alert Manager allows  Alert Status customization. To change which statuses are available, follow the steps:
 
@@ -169,7 +168,7 @@ Alert Manager allows  Alert Status customization. To change which statuses are a
 
 **Important:** You should not delete builtin/internal_only statuses
 
-## Configure E-Mail Notifications
+## E-Mail Notifications
 
 ### Understand how E-Mail Notifications work
 
@@ -291,11 +290,11 @@ As described above, *Notification Schemes* finally containt a combination from *
 * Type in the name (column `template_name`) to be used for this notification
 * Click *Save* at lower right corner to save the Notification Scheme
 
-## Configure External Workflow Actions
+## External Workflow Actions
 
 External Workflow Actions (EWA) can be used to manually trigger external actions. The External Alert Actions are based on Splunk's alert action functionality. While alert actions are usually triggered automatically, Alert Manager triggers the action manually.
 
-### Enable External Workflow Actions
+### Configure External Workflow Actions
 
 * (Optional) Install and configure an alert action under Splunk Settings -> Alert Action -> Setup
 * Open Alert Manager -> Settings -> External Workflow Actions

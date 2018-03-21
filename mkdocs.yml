@@ -1,4 +1,5 @@
 site_name: Alert Manager
+site_author: Simon Balz <simon@balz.me>, Mika Borner <mika.borner@gmail.com>
 pages:
     - Introduction: index.md
     - Installation: installation_manual.md
@@ -9,4 +10,4 @@ pages:
     - Release Notes: release_notes.md
     - FAQ: faq.md
     - About: about.md
-theme: readthedocs    
+theme: readthedocs
