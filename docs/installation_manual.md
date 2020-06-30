@@ -52,6 +52,8 @@ There are two ways to configure basic App settings:
 
 We recommend to use the App settings page, as there will be a configuration validation. To use the App settings page, restart Splunk after you've installed the App and open the App. If you open the App the first time, the settings page will show up automatically.
 
+![Screenshot](img/im_global_settings.png)
+
 **Notes:**
 
 * Change the index according to your decision whether to use the default one (named alerts) or your custom index. Either change it in the Alert Manager's setup page or in `alert_manager.conf`

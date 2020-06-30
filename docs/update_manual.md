@@ -10,17 +10,4 @@ Update the alert_manager on the search head. Remove all instances of TA-alert_ma
 
 ## After the Update
 
-Configure the index where alerts are stored (e.g. _alerts_) in the Alert Manager's _Global Settings_ view:
-
-![Screenshot](img/im_global_settings.png)
-
-Alternatively, you can also set the index name in local/alert_manager
-
-```ini
-[settings]
-index = alerts
-```
-
-See the _Installation Manual_ for more details.
-
 It is recommended to run a [Health Check](health_check.md)
