@@ -22,3 +22,5 @@ index = alerts
 ```
 
 See the _Installation Manual_ for more details.
+
+It is recommended to run a [Health Check](health_check.md)

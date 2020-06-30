@@ -51,6 +51,7 @@ If you enabled *Auto-resolve incidents on adding new matching suppression rules*
 * The Execute External Workflow Action -windows will open
 
 ![Screenshot](img/im_ewa_execute.png)
+
 * Select the Action
 * (Optional) Check the command to be executed
 * Execute the action
@@ -61,3 +62,29 @@ If you enabled *Auto-resolve incidents on adding new matching suppression rules*
 * To assign an incident to the current user, press the quick assign button
 
 ![Screenshot](img/im_quick_assign_button.png)
+
+## Manual Incident Creation
+
+It is possible to manually create an incident. Click the *New Incident* button on the top right.
+
+A form will open.
+
+![Screenshot](img/im_new_incident.png)
+
+Fill in the values accordingly. Note that you can add synthetic fields in key="value" format to the new incident (one value per line). 
+
+Optionally add a drilldown search. The time format has to be in *yyyy-mm-ddTHH:MM:SS.sss(+)hh:mm* format or epoch time.
+
+## Incident Grouping
+
+Incident can be grouped under the edit incident panel. Add incident to an existing group or add a new one.
+
+![Screenshot](img/im_edit_incident.png)
+
+Note: Currently, it is not possible to change group names or delete groups
+
+## Bulk Edit
+
+Multiple Incidents can be edited at the same time.
+
+![Screenshot](img/im_bulk_edit.png)
