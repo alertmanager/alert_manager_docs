@@ -62,19 +62,29 @@ Splunk's alerting facility triggers on search results. Sometimes an incident is 
 
 Another scenario could be, that an alert keeps recurring many times before an incident owner can find the root cause and fix the problem. This may cause a lot of incidents in the "new"-state. To close these previously opened incidents, the Auto Previous Resolve -function can be used.
 
+#### Auto-append to existing unresolved incident with the same title
+
+Using this option, if an alert is triggered an has the same title, it will be appended to the existing incident. The time will be updated to the new alert time.
+
+Alert Results will be updated with new values. The incident details will display a *first_seen* timestamp and also a *duplicate_count* counter.
+
+![Screenshot](img/im_incident_details_append.png)
+
+The history for this event will keep track of any previous alerts.
+
 #### Auto-resolve expired incidents
 
 To use the "Auto-resolve expired incidents" feature, the expiration time of the triggered alert time should be set. E.g. if an alert search runs every 15 Minutes, the expiration time should also be set to 15 Minutes.
 
 E.g. the first alert fires at 1:00am and creates an incident. The next scheduled alert runs at 1:15am without results. The first alert from 1:00am will expire at 1:15am and the incident will be automatically resolved with status auto_ttl_resolve.
 
-#### Auto-resolve previously opened identical incidents
+#### Auto-resolve previously opened identical incidents (deprecated)
 
 The Auto Previous Resolve feature closes previous incident in status "new".
 
 E.g. the first alert fires at 1:00am and creates an incident. The next scheduled alert fires at 1:15am and opens a new incident. If the first incident from 1:00am is still in status "new", it will be automatically resolved with status auto_previous_resolve. In case, the first incident's status was changed, it will not be resolved and it's status will be preserved.
 
-#### Auto-resolve newly incidents opened identical incidents
+#### Auto-resolve newly incidents opened identical incidents (deprecated)
 
 #### Auto-resolve incidents on adding new matching suppression rules
 
@@ -150,7 +160,6 @@ Add a Virtual Alert Manager user:
 ### Disable Alert Manager Users
 
 To disable virtual Alert Manager users, just set the  active user directory to 'builtin' and press 'Save'. Users already existing won't get removed so Incidents assigned to them aren't broken but you cannot assign Incidents to them anymore from that point.
-
 
 ## Alert Status
 
@@ -309,3 +318,16 @@ External Workflow Actions (EWA) can be used to manually trigger external actions
   * Parameters must be written in the form `param.<paramname>=<value>`
   * Available parameters can be found in the alerts alert_manager.conf.spec file
   * Parameters can use search result tokens in the form `$result.<fieldname>$`
+
+
+### Configure Drilldown Actions
+
+* Drilldown Actions can be used to open a web page using field values as parameters from the incident.
+* Currently only GET requests are supported
+* Fields can be referenced in the form `$fieldname>$`
+
+![Screenshot](img/im_drilldown_actions_settings.png)
+
+* Drilldown actions are shown within the incident details
+
+![Screenshot](img/im_drilldown_actions.png)

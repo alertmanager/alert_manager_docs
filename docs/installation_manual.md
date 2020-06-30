@@ -6,16 +6,9 @@
 2. Check if your Splunk installation meets the prerequisites
 3. Decide if you want to use Alert Manager's default index `alerts` or not. Configure this index on the Indexers and Search Heads (as we use the REST API, Splunk needs to know the existence of the index on the Search Head too).
 
-### Deployment Matrix
+### Deployment
 
- Instance                      | Alert Manager (alert_manager) | Add-on for Alert Manager (TA-alert_manager)
- ----------------------------- | ----------------------------- | -------------------------------------------
- Search Head(s)                | X                             | X
- Indexer(s    )                |                               | X
-
-#### Why the Add-on has to be deployed on a Search Head
-
-As the Alert Manager generates some events (by default alerts), they get parsed on the Search Head. So event breaking rules from props.conf need to get applied here, regardless if events get forwarded to indexers later or not.
+Install the App on the Search Head only. Uninstall any existing instances of TA-alert_manager.
 
 ## Deploy the Alert Manager App
 
@@ -48,20 +41,7 @@ The Alert Manager App contains the core functionality and configurations.
 2. **Do not restart Splunk yet!**
 3. If you downloaded the app manually from the Splunkbase, upload it to your Splunk server and unpack the archive at `$SPLUNK_HOME/etc/apps`
 4. Make sure, the folder name is called `alert_manager
-5. Install the Add-on for Alert Manager (as described below)
-6. Restart Splunk, if it hasn't been restarted yet
-
-### Install the Technology Add-on for Alert Manager
-
-The Add-on provides configuration for:
-
-* Event breaking and timestamp recognition configuration for Alert Manager events
-* Field extractions
-
-The Add-on is available at [Splunkbase](https://splunkbase.splunk.com/app/3365/).
-
-1. Unpack and upload the add-on according to the Deployment Matrix
-2. Restart Splunk
+5. Restart Splunk, if it hasn't been restarted yet
 
 ### Configure App settings
 
@@ -77,3 +57,7 @@ We recommend to use the App settings page, as there will be a configuration vali
 * Change the index according to your decision whether to use the default one (named alerts) or your custom index. Either change it in the Alert Manager's setup page or in `alert_manager.conf`
 * Have a look at `$SPLUNK_HOME/etc/apps/alert_manager/README/alert_manager.conf.spec` for full configuration reference
 * Set `is_configured` to the value "1" (without quotes) in `$SPLUNK_HOME/etc/apps/alert_manager/local/app.conf` inside the `[install]` stanza to hide the App's setup page in case you configured the App with the config file
+
+## After you deploy
+
+* Run a [Health Check](health_check.md)
