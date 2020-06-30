@@ -1,18 +1,12 @@
-# Update to Release 2.2
+# Update to Release 3.0
 
 ## Before you update
 
-**Important:** This release has changes regarding how indexes are handled. Read carefully!
-
-Previous releases were delivered with a default _indexes.conf_ file. Due to certification reasons this is not allowed anymore.
-
-Before upgrading make sure you have a valid indexes.conf on both the search-head and the indexer pointing to your index that stores the alerts (e.g. _alerts_).
-
-**Important**: Do not put the indexes.conf under alert_manager/default or TA-alert_manager/default, as these settings may be lost after an update.
+**Important:** This release is a Splunk 8.0 or higher release only. Upgrade Splunk to 8.0 first before upgrading!
 
 ## Update Procedure
 
-Update the alert_manager on the search head, and TA-alert_manager addon on both the search-head and indexer (if needed).
+Update the alert_manager on the search head. Remove all instances of TA-alert_manager as it is not needed anymore.
 
 ## After the Update
 

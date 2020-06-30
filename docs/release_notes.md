@@ -2,28 +2,57 @@
 
 ## New Features
 
-*  External Workflow Actions
-*  Support for external event ids
-*  Alert Status Customization
-*  Quick Assign
-*  Ability to index alert results instead of writing to KV Store
-*  Auto resolve informational events
+* Added Bulk Edit function
+* Added new feature to manually create incidents
+* Added new feature to append an alert to existing ones, if title is identical
+* Added new feature to filter by incident results
+* Added new feature to group incident
+* Added new feature to have additional drilldowns for incidents
+* Added new feature to manually trigger notifications
 
 ## Enhancements
 
-*  Search Head Cluster support
-*  Removed custom alert index / indexes.conf. Default to main index with ability to customize
-*  Changed permission style from capabilities to roles to comply with certification requirements
-*  Internal: New Splunkd-style REST endpoints because of deprecated Splunk Web endpoints
-*  Improved Alert History
-*  Reduced Alert Metadata footprint
-*  Added alert_manager_user role with read-only permissions to knowledge objects
-*  display_fields in Incident Settings is now optional
-*  Added a check to the incident edit modal to wait for the owner and status dropdown to be ready before save button gets active
-
+* Added support to hide unused Alert Statuses
+* Added support to override owner, category, subcategory, tags, display_fields, external_reference_id with event results
+* Added support to add and pass comments to external workflow actions
+* Added support to send HTML notifications in UTF-8 . Added support to load inicdent results also from index
+* Added health check dashboard
+* Deprecating lookups for category, subcategory and tags
+* Optimized alert_metadata event size
+* Merged TA-alert_manager into alert_manager app
+* Python 3.7 only release
 
 ## Changes by Release
 
+- **v3.3.0**/ 2020-04-26
+    - Python 3.7 only release
+    - Merged TA-alert_manager into alert_manager app
+    - Added Bulk Edit function
+    - Added new feature to manually create incidents
+    - Added new feature to append an alert to existing ones, if title is identical
+    - Added new feature to filter by incident results
+    - Added new feature to group incident
+    - Added new feature to have additional drilldowns for incidents
+    - Added new feature to manually trigger notifications
+    - Deprecating auto_previous_resolve auto_subsequent_resolve due to new append feature
+    - Added support to hide unused Alert Statuses
+    - Added support to override owner, category, subcategory, tags, display_fields, external_reference_id with event results
+    - Added support to add and pass comments to external workflow actions
+    - Added support to send HTML notifications in UTF-8 . Added support to load inicdent results also from index
+    - Added health check dashboard
+    - Deprecating lookups for category, subcategory and tags
+    - Optimized alert_metadata event size
+    - Fixed bugs in datamodel. Added action and previous_status attributes to fix state transition dashboard
+-**v2.2.0**/ 2017-12-31
+    - Added support for custom alert status in KVStore
+    - Added support to index data results from a given alert
+    - Added support for Conditional Tables in the Incident Posture View
+    - Added support for automatically resolve informational events
+    - Added support for external workflow actions
+    - Added support for external reference ids
+    - Improved Alert History
+    - Fixed a bug when email notification still were sent for suppressed incidents
+    - Fixed a bug where comments are not shown in incident posture
 - **v2.1.4**/   2016-11-07
     - Fixed disabled migration scripts for fresh installations
 - **v2.1.3**/   2016-10-21
@@ -38,7 +67,7 @@
     - Added auto subsequent resolve option to resolve new incidents from the same title
     - Added loading indicator to incident posture dashboard when expanding incident to show details
     - Improved incident edit dialog to provide better owner search and selection
-    - Fixed IncidentContext to support https scheme and custom splunk web port   Enhanced timestamp display in incident history
+    - Fixed IncidentContext to support https scheme and custom splunk web port  Enhanced timestamp display in incident history
     - Lot’s of bugfixes, code cleanups, enhancements and sanitizations. See changelog for details
 - **v2.0.5**/   2016-04-15
     - App certification release only - no functional changes included!

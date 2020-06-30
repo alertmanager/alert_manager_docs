@@ -151,7 +151,6 @@ Add a Virtual Alert Manager user:
 
 To disable virtual Alert Manager users, just set the  active user directory to 'builtin' and press 'Save'. Users already existing won't get removed so Incidents assigned to them aren't broken but you cannot assign Incidents to them anymore from that point.
 
-
 ## Alert Status
 
 Alert Manager allows  Alert Status customization. To change which statuses are available, follow the steps:

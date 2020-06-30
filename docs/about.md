@@ -2,7 +2,7 @@
 
 ## Authors
 
-Simon Balz (<simon@balz.me>) and Mika Borner (<mika.borner@gmail.com>).
+Simon Balz (<simon@balz.me>), Mika Borner (<mika.borner@gmail.com>) and Datapunctum GmbH.
 
 ## Credits
 
