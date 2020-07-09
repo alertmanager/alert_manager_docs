@@ -24,6 +24,19 @@
 
 ## Changes by Release
 
+## Release Notes Details
+
+* **v3.0.3**/ 2020-07-09
+  * Fixed an issue, when overwriting a user
+  * Upgraded loadincidentresults and loaddrilldowns to v2 custom seach commands
+
+* **v3.0.2**/ 2020-07-08
+  * Fixed an issue, when server timezone is not UTC
+  * Fixed an issue with missing append_ignore_status "closed"
+
+* **v3.0.1**/ 2020-07-07
+  * Bugfix release for Windows installations
+
 * **v3.3.0**/ 2020-04-26
   * Python 3.7 only release
   * Merged TA-alert_manager into alert_manager app
