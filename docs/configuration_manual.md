@@ -144,6 +144,19 @@ The incident's priority is calculated based on a lookup table named `alert_prior
 
 To adjust the priorities, create a new lookup table `$APP_HOME/lookup/alert_priority.csv` and edit `$APP_HOME/local/transforms.conf` to point to this new lookup table.
 
+## Overwriting Default Field Values
+
+There are field values, which can be overwriten by the alert, e.g. by using an `eval` or a `lookup` command:
+
+* urgency
+* impact
+* owner
+* category
+* subcategory
+* tags
+* display_fields
+* external_reference_id
+
 ## Alert Manager Users
 
 Users in the Alert Manager are supposed to be virtual. In addition to users in Splunk's ecosystem, e.g. Splunk internal users or users from an external LDAP repository, virtual Alert Managers users allow Incident assignment to external parties without creating them as a real Splunk user.
