@@ -144,9 +144,9 @@ The incident's priority is calculated based on a lookup table named `alert_prior
 
 To adjust the priorities, create a new lookup table `$APP_HOME/lookup/alert_priority.csv` and edit `$APP_HOME/local/transforms.conf` to point to this new lookup table.
 
-## Overwriting Default Field Values
+## Overwriting Default Values
 
-There are field values, which can be overwriten by the alert, e.g. by using an `eval` or a `lookup` command:
+There are default values and settings, which can be overwriten by the alert, e.g. by using an `eval` or a `lookup` command:
 
 * urgency
 * impact
