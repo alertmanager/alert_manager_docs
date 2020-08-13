@@ -55,7 +55,9 @@ The incident collection has an additional column `external_reference_id` which c
 
 ## Reports
 
-tbd
+### Custom Reports
+
+Custom reports can be added to the Reports Menu. To automatically show them the report name should start with the prefix `am_report_`
 
 ## Datamodel
 
