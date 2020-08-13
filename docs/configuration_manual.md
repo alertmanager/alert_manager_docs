@@ -19,8 +19,11 @@ It is important, to distinguish between the terms alerts and incidents.
 Incidents are stored with metadata such as `alert_time`, `job_id`, `owner`, `status`, `priority`, `ttl`, etc.
 
 ### Alert Action
+
 The "alert_manager" Alert Action basically enables a Scheduled Search (Alert) to use the Alert Manager functionalities.
 It provides some options to customize the behaviour. These options apply to the actual incident being created when an alert fires.
+
+For a user to able to send alerts to Alert Manager, the alert_manager needs to be assigned.
 
 ### Incident Settings
 
@@ -117,6 +120,8 @@ By default, the table shows all alerts that are managed by the Alert Manager (in
 To configure an unmanaged alert to be managed, the App context where the alert resides in needs to be selected. All alerts in the app context will be displayed in the table. If there are alerts that, are superfluous, they can be deleted by right-clicking on the table and selecting _Remove row_.
 
 To store the new incident configuration, _Save settings_ has to be selected. Before or after saving, further customization of the incident can be applied.
+
+Note: Only users that have the `admin_all_object` capability can do an initial configuration of another users private alerts.
 
 ### Alert
 
@@ -228,7 +233,6 @@ incident_auto_previous_resolved | An incident has been resolved due a new incide
 incident_auto_ttl_resolved | An incident has been resolved by the Alert Manager scheduler after the TTL has been reached |
 incident_auto_suppress_resolved | An incident has been resolved by the Alert Manager scheduler after a matching Suppression Rule was added |
 
-
 ### Create E-Mail Template Files
 
 **E-Mail Template Files** are located at two paths:
@@ -270,6 +274,7 @@ $subcategory$ |
 $tags$ |
 $results_link$ |
 $view_link$ |
+$alert_manager_link$ |
 $server.version$ |
 $server.build$ |
 $server.serverName$ |
